@@ -1,0 +1,8 @@
+{
+    "solution": {
+        "path": "Scsl.S3.sln",
+        "projects": [
+            "src\\Scsl.S3\\Scsl.S3.csproj"
+        ]
+    }
+}
