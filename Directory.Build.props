@@ -1,8 +1,8 @@
 <Project>
     <PropertyGroup>
         <Authors>Shane Saunders</Authors>
-        <Company>Saunders Creative Strategies {SCS}</Company>
-        <Copyright>Copyright © 2023-2024. Saunders Creative Strategies {SCS}. All Rights Reserved.</Copyright>
+        <Company>Saunders Creative Strategies Limited {SCS}</Company>
+        <Copyright>Copyright © 2023-2024. Saunders Creative Strategies Limited {SCS}. All Rights Reserved.</Copyright>
 
         <NoWarn>CS1591</NoWarn>
     </PropertyGroup>
