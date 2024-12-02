@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Scsl.S3</RootNamespace>
+    <PackageId>Scsl.S3</PackageId>
+    <AssemblyName>Scsl.S3</AssemblyName>
+    <AssemblyTitle>Scsl.S3</AssemblyTitle>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Version>8.0.12</Version>
+    <AssemblyVersion>8.0.12</AssemblyVersion>
+    <FileVersion>8.0.12.9102</FileVersion>
+    <InformationalVersion>8.0.12</InformationalVersion>
+  </PropertyGroup>
+  <Target Name="BeforeBuildActions" BeforeTargets="BeforeBuild" Condition="'$(Configuration)' == 'Debug'">
+    <Task.BuildVersion BaseVersion="$(Version)">
+      <Output TaskParameter="FileVersion" PropertyName="FileVersion" />
+      <Output TaskParameter="AssemblyVersion" PropertyName="AssemblyVersion" />
+      <Output TaskParameter="ProductVersion" PropertyName="ProductVersion" />
+    </Task.BuildVersion>
+    <PropertyGroup>
+      <Version>$(ProductVersion)</Version>
+      <FileVersion>$(FileVersion)</FileVersion>
+      <AssemblyVersion>$(ProductVersion)</AssemblyVersion>
+      <InformationalVersion>$(ProductVersion)</InformationalVersion>
+    </PropertyGroup>
+  </Target>
+  <Target Name="AfterBuildActions" AfterTargets="AfterBuild" Condition="'$(Configuration)' == 'Debug'">
+    <XmlPoke XmlInputPath="$(MSBuildProjectFile)" Query="(//PropertyGroup/Version)[1]" Value="$(ProductVersion)" />
+    <XmlPoke XmlInputPath="$(MSBuildProjectFile)" Query="(//PropertyGroup/FileVersion)[1]" Value="$(FileVersion)" />
+    <XmlPoke XmlInputPath="$(MSBuildProjectFile)" Query="(//PropertyGroup/AssemblyVersion)[1]" Value="$(ProductVersion)" />
+    <XmlPoke XmlInputPath="$(MSBuildProjectFile)" Query="(//PropertyGroup/InformationalVersion)[1]" Value="$(ProductVersion)" />
+  </Target>
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.S3" Version="3.7.406.3" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="8.0.2" />
+  </ItemGroup>
+</Project>

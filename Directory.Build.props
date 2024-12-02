@@ -1,0 +1,42 @@
+<Project>
+    <PropertyGroup>
+        <Authors>Shane Saunders</Authors>
+        <Company>Saunders Creative Strategies {SCS}</Company>
+        <Copyright>Copyright © 2023-2024. Saunders Creative Strategies {SCS}. All Rights Reserved.</Copyright>
+
+        <NoWarn>CS1591</NoWarn>
+    </PropertyGroup>
+	
+	<UsingTask TaskName="Task.BuildVersion" AssemblyFile="MrGeek.Build.Utilities.dll" />
+
+    <PropertyGroup Condition ="'$(Configuration)' == 'Release'">
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        
+        <PackageProjectUrl>https://github.com/SaundersCreativeStrategies/Scsl.S3</PackageProjectUrl>
+        <PackageTags>Object Storage, Cloudflare, R2, AWS</PackageTags>
+
+        <PackageDescription>
+            
+        </PackageDescription>
+        
+        <RepositoryUrl>https://github.com/SaundersCreativeStrategies/Scs.S3.git</RepositoryUrl>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        
+        <PackageIcon>scs-logo-600x600.png</PackageIcon>
+        <PackageIconUrl>https://media.asparatu.net/scs-logo-600x600.png</PackageIconUrl>
+
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    </PropertyGroup>
+
+    <ItemGroup Condition="'$(Configuration)' == 'Release'">
+        <None Include="../../images/scs-logo-600x600.png" Pack="true" PackagePath="\" />
+        <None Include="../../docs/README.md" Pack="true" PackagePath="\" />
+        <None Include="../../LICENSE" Pack="true" PackagePath="" />
+    </ItemGroup>
+</Project>
