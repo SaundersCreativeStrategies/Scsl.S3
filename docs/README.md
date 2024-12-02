@@ -67,7 +67,7 @@ DeleteObject
 public async Task<IActionResult> DeleteObject(string file)
 {
     var results = await _client.DeleteObject(_options.BucketName, file);
-    if(!results.Succeeded) return BadRequest(new JsonResult(results.Errors));
+    if(!results.Succeeded) return BadRequest(new Json(results.Errors.ToList());
     
     return HttpStatusCode.NoContent;
 }
