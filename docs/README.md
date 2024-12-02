@@ -3,7 +3,8 @@ This lightweight library provides seamless access to Cloudflare R2 Object Storag
 
 ### Installation
 ```
-dotnet add package 
+dotnet add package Scsl.S3 
+dotnet add package Scsl.S3 --version <version>
 ```
 
 ### Using the Cloudflare R2 Library: A Quick Guide
