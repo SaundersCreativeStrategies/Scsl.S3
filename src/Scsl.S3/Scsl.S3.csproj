@@ -37,6 +37,7 @@
   </Target>
   <ItemGroup>
     <PackageReference Include="AWSSDK.S3" Version="3.7.406.3" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.1" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="8.0.2" />
   </ItemGroup>
 </Project>
