@@ -19,7 +19,7 @@ public static class S3AppSettingsExtensions
     /// <exception cref="DirectoryNotFoundException"> Thrown if the specified path or sub-folder does not exist.</exception>
     /// <exception cref="FileNotFoundException"> Thrown if any required configuration file is missing.</exception>
     public static IConfigurationBuilder AddS3Configuration(this IConfigurationBuilder builder, string env,
-        string subFolder, string filePrefixName)
+        string filePrefixName, string subFolder = "") 
     {
         string path = string.IsNullOrEmpty(subFolder) ? BasePath : Path.Combine(BasePath, subFolder);
 
