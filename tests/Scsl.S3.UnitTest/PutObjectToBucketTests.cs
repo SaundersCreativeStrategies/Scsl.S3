@@ -4,6 +4,7 @@ using Microsoft.Extensions.Options;
 
 using Scsl.S3.CloudFlare;
 using Scsl.S3.Contacts;
+using Scsl.S3.Extensions;
 
 namespace Scsl.S3.UnitTest;
 
@@ -17,10 +18,9 @@ public class PutObjectToBucketTests
     {
         //Loads configuration file
         var config = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            .AddS3Configuration("Development", "appsettings")
             .Build();
-
+        
         // set up DI container
         var services = new ServiceCollection();
 
@@ -52,7 +52,7 @@ public class PutObjectToBucketTests
         var fileBytes = File.ReadAllBytes(path);
         
         // Test IR2Client Functionality
-        const string key = "profile/8C9E189D-9F08-415E-9788-6D4E4B87BDE7/D6BEFA01-650D-49F9-8EE3-39FCDDAF74CB.jpg";
+        const string key = "profile/8C9E189D-9F08-415E-9788-6D4E4B87BDE7/D6BEFA01-650D-49F9-8EE3-39FCDDAF7455.jpg";
         var s3Client = _serviceProvider.GetRequiredService<IR2Client>();
         var results = s3Client.PutObject(new MemoryStream(fileBytes), options.BucketName, key);
         
@@ -76,7 +76,7 @@ public class PutObjectToBucketTests
         string path = Path.Combine(Environment.CurrentDirectory, "user-placeholder.png");
         
         // Test IR2Client Functionality
-        const string key = "profile/8C9E189D-9F08-415E-9788-6D4E4B87BDE7/D6BEFA01-650D-49F9-8EE3-39FCDDAF74CB.jpg";
+        const string key = "profile/8C9E189D-9F08-415E-9788-6D4E4B87BDE7/D6BEFA01-650D-49F9-8EE3-39FCDDAF7466.jpg";
         var s3Client = _serviceProvider.GetRequiredService<IR2Client>();
         var results = s3Client.PutObject(path, options.BucketName, key);
         
