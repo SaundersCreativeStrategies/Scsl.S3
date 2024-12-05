@@ -11,10 +11,10 @@
     <AssemblyTitle>Scsl.S3</AssemblyTitle>
   </PropertyGroup>
   <PropertyGroup>
-    <Version>8.0.12</Version>
-    <AssemblyVersion>8.0.12</AssemblyVersion>
-    <FileVersion>8.0.12.9102</FileVersion>
-    <InformationalVersion>8.0.12</InformationalVersion>
+    <Version>8.0.13</Version>
+    <AssemblyVersion>8.0.13</AssemblyVersion>
+    <FileVersion>8.0.13.9104</FileVersion>
+    <InformationalVersion>8.0.13</InformationalVersion>
   </PropertyGroup>
   <Target Name="BeforeBuildActions" BeforeTargets="BeforeBuild" Condition="'$(Configuration)' == 'Debug'">
     <Task.BuildVersion BaseVersion="$(Version)">
