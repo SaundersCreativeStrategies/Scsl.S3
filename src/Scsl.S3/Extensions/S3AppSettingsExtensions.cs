@@ -1,10 +1,11 @@
+// ref: https://jd-bots.com/2022/01/30/fixed-configurationbuilder-does-not-contain-a-definition-for-setbasepath/
 using Microsoft.Extensions.Configuration;
 
 namespace Scsl.S3.Extensions;
 
 public static class S3AppSettingsExtensions
 {
-    private static readonly string BasePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
+    private static readonly string BasePath = AppDomain.CurrentDomain.BaseDirectory;
 
     /// <summary>
     /// Extends <see cref="IConfigurationBuilder"/> to add JSON configuration files from a specified S3 path.
