@@ -8,7 +8,7 @@ This guide explains how to use the `R2Client` class to interact with an S3-compa
 1. **Install Scsl.S3 SDK for .NET**
    You should install [Scsl.S3 with NuGet](https://www.nuget.org/packages/Scsl.S3/):
    ```  
-   Install-Package Scsl.S#
+   Install-Package Scsl.S3
    ```  
    Or via .NET Core command line interface:
      ```
